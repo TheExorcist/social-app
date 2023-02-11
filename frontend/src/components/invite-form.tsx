@@ -11,7 +11,7 @@ const InviteForm = () => {
   const [email, setEmail] = useState(null)
 
   const {setInvites, invites} = useContext(ServerApiContext)
-  const {isFetching, isSuccess, createInvite, errors, invite } = useInvite() 
+  const {isFetching, isSuccess, createInvite, errors, invite, setInvite } = useInvite() 
 
   const submitForm = useCallback(async (event: any) => {
     if (email) {
@@ -24,6 +24,8 @@ const InviteForm = () => {
   useEffect(() => {
     if (isSuccess && !errors && invite) {
       setInvites([invite, ...invites])
+      setInvite(null)
+      setEmail(null)
     }
   }, [isSuccess, errors, invite])
 

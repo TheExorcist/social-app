@@ -35,7 +35,7 @@ export const Dashboard = () => {
       textAlign: 'left',
       marginBottom: '5%'
     }} >
-      { invites.length == 0 ? 'You do not have invites, please create !!': 'Here are the invites .....'} 
+      { `You have ${invites.length} invites`}
     </Typography>
     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
       {invites.map((invite, index) => (
